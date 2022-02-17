@@ -36,3 +36,11 @@ describe('Toggle show password', () => {
         cy.get('input[id="user_pass"][type="password"]')
     })
 })
+
+describe('Toggle remember me', () => {
+    it('Toggles remember me', () => {
+        cy.login('mupp', 'get')
+        cy.get('input[id="rememberme"]').click()
+        cy.get('input[id="rememberme"]').click()
+    })
+})
