@@ -26,11 +26,13 @@ describe('Form wrong password', () => {
     })
 })
 
-describe('Show password', () => {
+describe('Toggle show password', () => {
     it('Toggles display password after entering password', () => {
         cy.login(`${valid_name}`, `${invalid_password}`)
+        cy.get('input[id="user_pass"][type="password"]')
         cy.get('div[class="wp-pwd"] button').click()
-        cy.wait(500)
-        cy.get('div[class="wp-pwd"] input').contains(`${invalid_password}`)
+        cy.get('input[id="user_pass"][type="text"]')
+        cy.get('div[class="wp-pwd"] button').click()
+        cy.get('input[id="user_pass"][type="password"]')
     })
 })
