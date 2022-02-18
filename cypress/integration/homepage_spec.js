@@ -39,8 +39,20 @@ describe('Toggle show password', () => {
 
 describe('Toggle remember me', () => {
     it('Toggles remember me', () => {
-        cy.login('mupp', 'get')
+        cy.login('mupp', 'mupp')
         cy.get('input[id="rememberme"]').click()
         cy.get('input[id="rememberme"]').click()
+    })
+})
+
+describe('Forgot password', () => {
+    it('Clicks lost password', () => {
+        cy.visit('blog/wp-login.php').wait(1000);
+        cy.get('p[id="nav"] a').click()
+        cy.get('form[id="lostpasswordform"]')
+    })
+    it('Submits form without entering email', () => {
+        cy.get('input[id="wp-submit"]').click()
+        cy.get('div[id="login_error"]').contains('Please enter a username or email address')
     })
 })
