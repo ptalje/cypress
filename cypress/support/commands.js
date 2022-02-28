@@ -33,7 +33,7 @@ Cypress.Commands.add('login', (username, password) => {
             }
         });
         if (!hasMatch) {
-            cy.visit('blog/wp-login.php').wait(1000);
+            cy.visit('/log-in/').wait(1000);
             cy.get('#user_login').type(username);
             cy.get('#user_pass').type(password);
         }

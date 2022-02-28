@@ -47,7 +47,7 @@ describe('Toggle remember me', () => {
 
 describe('Forgot password', () => {
     it('Clicks lost password', () => {
-        cy.visit('blog/wp-login.php').wait(1000);
+        cy.visit('/log-in/').wait(1000);
         cy.get('p[id="nav"] a').click()
         cy.get('form[id="lostpasswordform"]')
     })
